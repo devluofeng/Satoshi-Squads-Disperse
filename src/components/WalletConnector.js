@@ -36,7 +36,7 @@ export const Balance = () => {
     return () => {
       library.removeAllListeners('block');
     };
-  },[]);
+  },[library, mutate]);
 
   if(!balance) {
     return <div>...</div>
@@ -75,7 +75,7 @@ export const TokenBalance = ({ symbol, address, decimals }) => {
       library.removeAllListeners(fromAcc);
       library.removeAllListeners(toAcc);
     };
-  },[]);
+  },[account, address, library, mutate]);
 
   if(!balance) {
     return <Table.Body>...</Table.Body>

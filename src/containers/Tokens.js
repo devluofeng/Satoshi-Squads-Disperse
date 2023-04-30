@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import { ethers } from "ethers";
 import { BigNumber } from "bignumber.js";
