@@ -10,7 +10,7 @@ import ERC20 from '../contracts/erc20.json';
 import { DISPERSEABI } from '../assets/disperse';
 
 const UNIT = 1000000000000000000;
-const address = DISPERSEABI.binanceTestnet.binanceMainnet; // change
+const address = DISPERSEABI.binanceTestnet; // change
 
 const Tokens = () => {
     const [textValue, setTextValue] = useState('');
