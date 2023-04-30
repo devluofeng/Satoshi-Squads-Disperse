@@ -7,7 +7,7 @@ import disperse from '../contracts/Disperse.json';
 import { DISPERSEABI } from '../assets/disperse';
 
 const UNIT = 1000000000000000000;
-const address = DISPERSEABI.binanceTestnet; // change
+const address = DISPERSEABI.binanceTestnet.binanceMainnet; // change
 
 const Native = () => {
     const [textValue, setTextValue] = useState('');
@@ -61,13 +61,13 @@ const Native = () => {
 
     useEffect(() => {
         if (chainId === 97) {
+            setCurrency("TBNB");
+        } else if (chainId === 56) {
             setCurrency("BNB");
-        } else if (chainId === 4690) {
-            setCurrency("IOTX-T");
         }
     },[chainId]);
 
-    if ((chainId === 97 || chainId === 4690) && active) {
+    if ((chainId === 97 || chainId === 56) && active) {
         return(
             <Grid>
                 <Grid.Row>
@@ -109,8 +109,8 @@ const Native = () => {
                     </Grid.Column>
                     <Grid.Column width={10}>
                         <Grid.Row>
-                            {!(chainId === 97 || chainId === 4690) ?
-                            <div><p>This DAPP only supports Binance Testnet(Chain ID : 97) and IOTEX Testnet ( Chain ID : 4690)</p></div>
+                            {!(chainId === 97 || chainId === 56) ?
+                            <div><p>This DAPP only supports Binance Testnet(Chain ID : 97) and Binance Mainnet ( Chain ID : 56)</p></div>
                             : <div></div>}
                         </Grid.Row>
                         <Grid.Row>

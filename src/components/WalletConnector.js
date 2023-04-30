@@ -43,9 +43,9 @@ export const Balance = () => {
   }
 
   if (chainId === 97) {
+      return <div>TBNB : {parseFloat(formatEther(balance)).toPrecision(4)}</div>;
+  } else if (chainId === 56) {
       return <div>BNB : {parseFloat(formatEther(balance)).toPrecision(4)}</div>;
-  } else if (chainId === 4690) {
-      return <div>IOTX-T : {parseFloat(formatEther(balance)).toPrecision(4)}</div>;
   } else {
     return <div>...</div>;
   }
